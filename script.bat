@@ -1,0 +1,15 @@
+mkdir tmp
+cd "../site/wwwroot/App_Data/"
+copy "appsettings.json" "../../../deploy/tmp/appsettings.json"
+copy "dataSettings.json" "../../../deploy/tmp/dataSettings.json"
+copy "plugins.json" "../../../deploy/tmp/plugins.json"
+cd "../../../deploy"
+@RD /S /Q "../site/wwwroot/"
+mkdir "../site/wwwroot"
+copy wwwroot.zip "../site/wwwroot/wwwroot.zip"
+cd "../site/wwwroot/"
+tar -xf wwwroot.zip
+cd "../../deploy/tmp"
+copy "appsettings.json" "../../site/wwwroot/App_Data/appsettings.json"
+copy "dataSettings.json" "../../site/wwwroot/App_Data/dataSettings.json"
+copy "plugins.json" "../../site/wwwroot/App_Data/plugins.json"
