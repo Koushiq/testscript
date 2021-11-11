@@ -6,7 +6,7 @@ copy "plugins.json" "../../../deploy/tmp/plugins.json"
 cd "../../../deploy"
 @RD /S /Q "../site/wwwroot/"
 mkdir "../site/wwwroot"
-copy wwwroot.zip "../site/wwwroot/wwwroot.zip"
+copy *.zip "../site/wwwroot/wwwroot.zip"
 cd "../site/wwwroot/"
 tar -xf wwwroot.zip
 cd "../../deploy/tmp"
